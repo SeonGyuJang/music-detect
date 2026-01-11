@@ -52,30 +52,49 @@ music-detect/
 
 ## 시작하기
 
-### 백엔드 설치
+### 📋 설치 가이드
+
+- **Windows 사용자**: [Windows 설치 가이드](docs/WINDOWS_SETUP.md) 참고
+- **macOS/Linux 사용자**: [상세 설치 가이드](docs/SETUP.md) 참고
+
+### 빠른 시작
+
+#### 백엔드 설치 및 실행
 
 ```bash
 cd backend
+
+# 가상 환경 생성
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# 가상 환경 활성화
+# macOS/Linux:
+source venv/bin/activate
+# Windows:
+.\venv\Scripts\activate
+
+# 의존성 설치
+pip install --upgrade pip
 pip install -r requirements.txt
+
+# 서버 실행
+python main.py
 ```
 
-### 백엔드 실행
+서버가 `http://localhost:8000`에서 실행됩니다.
 
-```bash
-cd backend
-uvicorn main:app --reload
-```
+**API 문서**: http://localhost:8000/docs
 
-### 모바일 앱 설치
+#### 모바일 앱 설치 (선택사항)
 
 ```bash
 cd mobile
 npm install
-# iOS
+
+# iOS (macOS만 해당)
 cd ios && pod install && cd ..
 npx react-native run-ios
+
 # Android
 npx react-native run-android
 ```
